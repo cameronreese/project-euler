@@ -21,7 +21,7 @@ public class Main {
         boolean smallest_multiple_not_found = true;
         LinkedList<Long> multiples = new LinkedList<Long>();
         //populate a list with numbers from 20 to 11
-        for (long i = 10; i >= 5; i--){
+        for (long i = 20; i >= 11; i--){
             multiples.add(i);
         }
 
@@ -31,17 +31,16 @@ public class Main {
 
         long temp_product = 0;
         while (multiples.size() > 0) {
-            current_product *= multiples.getLast();
 
-            /************ MAY NEED TO INVERT NESTED LOOP ******************/
             //iterate thru list and remove any multiple that is a multiple of the current product
             temp_product = current_product;
             for (int i = 0; i < multiples.size(); i++) {
-                for (int j = 2; j <= 10; j++){
+                for (int j = 1; j <= 20; j++){
                     temp_product *= j;
                     if (temp_product % multiples.get(i) == 0) {
                         multiples.remove(i);
-                        j = 11;
+                        current_product *= j;
+                        j = 21;
                     }
                     temp_product = current_product;
                 }
