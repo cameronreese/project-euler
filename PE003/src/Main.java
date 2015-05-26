@@ -22,12 +22,16 @@ public class Main {
                 for (Long p : primes){
                     product = product * p;
                 }
-                if (product == num)
+                if (product == num) {
                     solution = Long.toString(i);
+                    i = num;
+                }
             }
         }
         System.out.print(solution);
     }
+
+
 
     //Lets you know whether or not a number is a prime number (used in problem 3)
     private static boolean isPrime(long n){
